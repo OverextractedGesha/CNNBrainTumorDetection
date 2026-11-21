@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing & profiling
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local datasets and model weights
+/Dataset/
+/data/
+/checkpoints/
+/outputs/
+/runs/
+/share_for_friend/
+/share_for_friend.zip
+*.pt
+*.pth
+*.onnx
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

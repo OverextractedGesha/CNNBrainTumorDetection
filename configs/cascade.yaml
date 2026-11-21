@@ -1,0 +1,19 @@
+seed: 42
+stage1_config: "configs/stage1.yaml"
+stage2_config: "configs/stage2.yaml"
+stage1_checkpoint: "checkpoints/stage1/best_model.pt"
+stage2_checkpoint: "checkpoints/stage2_cnn_ablation/best_model.pt"
+stage2_checkpoints:
+  - "checkpoints/stage2_cnn_ablation/best_model.pt"
+  - "checkpoints/stage2_cnn_fold1/best_model.pt"
+  - "checkpoints/stage2_cnn_fold2/best_model.pt"
+  - "checkpoints/stage2_cnn_fold3/best_model.pt"
+  - "checkpoints/stage2_cnn_fold4/best_model.pt"
+cascade_manifest_path: "data/manifests/cascade_test_manifest.csv"
+output_dir: "outputs/evaluation"
+image_size: 224
+use_clahe: false
+crop_margin_ratio: 0.05
+stage1_threshold: 0.35
+stage2_temperature: 1.0
+stage2_uncertainty_threshold: 0.70

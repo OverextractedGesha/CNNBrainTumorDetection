@@ -1,0 +1,31 @@
+stage: stage1
+seed: 42
+data:
+  nickparvar_dir: "data/raw/nickparvar"
+  manifest_path: "data/manifests/stage1_manifest.csv"
+  image_size: 224
+  batch_size: 32
+  num_workers: 2
+  pin_memory: true
+  use_cache: true
+  cache_dir: "data/cache/stage1"
+  use_clahe: false
+  crop_margin_ratio: 0.05
+model:
+  arch: "cnn"
+  backbone: "efficientnet_b0"
+  pretrained: true
+  num_classes: 2
+  dropout: 0.3
+training:
+  epochs: 15
+  warmup_epochs: 2
+  freeze_backbone_epochs: 2
+  lr: 0.0003
+  weight_decay: 0.0001
+  loss: "weighted_ce"
+  label_smoothing: 0.05
+  early_stopping_patience: 5
+  checkpoint_dir: "checkpoints/stage1"
+calibration:
+  target_sensitivity: 0.98

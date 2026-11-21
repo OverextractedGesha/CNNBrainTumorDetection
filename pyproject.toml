@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mri-tumor"
+version = "0.1.0"
+description = "Two-stage cascade deep learning system for brain MRI tumor screening and subtyping"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "DSC Team" }
+]
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "timm>=0.9.12",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "scikit-learn>=1.3.0",
+    "h5py>=3.10.0",
+    "opencv-python>=4.8.0",
+    "Pillow>=10.0.0",
+    "albumentations>=1.4.0",
+    "pandas>=2.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.66.0",
+    "matplotlib>=3.8.0",
+    "gradio>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+]
+
+[project.scripts]
+mri-tumor = "mri_tumor.app.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
